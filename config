@@ -1,0 +1,3 @@
+# setting idobata bot token
+# rename hogehoge to your idobata bot token
+export IDOBATA_API_TOKEN=hogehoge

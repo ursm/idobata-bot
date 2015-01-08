@@ -1,0 +1,2 @@
+. ./config
+ruby ./main.rb

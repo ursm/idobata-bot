@@ -1,0 +1,6 @@
+## need install module
+gem install pusher-client
+gem install Mem
+
+## execute
+ruby run.rb
