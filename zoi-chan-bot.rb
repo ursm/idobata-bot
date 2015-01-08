@@ -45,7 +45,7 @@ module Idobata
 		end
 
 		def get_image_url(search)
-			params = URI.encode("q=#{search}&lr=lang_ja&ie=utf-8&oe=utf-8&aq=t&rls=org.mozilla:ja:official&client=firefox-a&v=1.0&rsz=large&start=#{rand(100)}");
+			params = URI.encode("q=#{search}&lr=lang_ja&ie=utf-8&oe=utf-8&aq=t&rls=org.mozilla:ja:official&client=firefox-a&v=1.0&rsz=large&start=#{rand(8)}");
 			response = Net::HTTP.get(
 				'ajax.googleapis.com',
 				'/ajax/services/search/images?'+params
