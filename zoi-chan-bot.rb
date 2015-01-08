@@ -43,7 +43,7 @@ module Idobata
 				end
 			end
 
-			if /LGTM$/ =~ to_body_plain || /lgtm$/ =~ to_body_plain
+			if /LGTM/ =~ to_body_plain || /lgtm/ =~ to_body_plain
 				url = get_lgtm_url()
 				to_say( message.room_id, message.sender_name, "良いと思います！ " + url )
 			end
