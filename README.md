@@ -28,11 +28,15 @@ config
 ` export IDOBATA_API_TOKEN=hogehoge `
 
 botを作成する場合は idobata::Bot を継承して 下記関数をオーバーライドしてください
-` def name #bot の名前 
+
+` def name #bot の名前 `
+
 ` def on_message(message) # 関しているチャットに送られたメッセージ処理 `
+
 ` def on_myself_message(message) # 自分宛に送られたメッセージ処理 `
 
 実行するときは run.sh を実行する
+
 ` ./run.sh `
 
 ## Licence
