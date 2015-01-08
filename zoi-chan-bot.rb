@@ -39,8 +39,13 @@ module Idobata
 				if !url.nil?
 					to_say( message.room_id, message.sender_name, question + " はこちらでしょうか! " + url)
 				else
-					to_say( message.room_id, "ごめんなさい. わからないです・・。")
+					to_say( message.room_id, message.sender_name, "ごめんなさい. わからないです・・。")
 				end
+			end
+
+			if /LGTM$/ =~ to_body_plain || /lgtm$/ =~ to_body_plain
+				url = get_lgtm_url()
+				to_say( message.room_id, message.sender_name, "良いと思います！ " + url )
 			end
 		end
 
@@ -55,5 +60,11 @@ module Idobata
 			responseResults.at( rand(8) )['url']
 		end
 
+		def get_lgtm_url()
+			response = Net::HTTP.get('www.lgtm.in','/g').force_encoding('utf-8')
+			/value="(.*)" class="form-control" id="imageUrl"/ =~ response
+			pp $1
+			$1
+		end
 	end
 end
