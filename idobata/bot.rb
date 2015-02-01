@@ -137,7 +137,7 @@ module Idobata
 		end
 
 		def listen
-			channel.bind('message_created') do |message_json|
+			channel.bind('message:created') do |message_json|
 				message = Message.new(JSON.parse(message_json)['message'])
 				on_message(message)
 				if is_myself_message(message)
@@ -147,7 +147,7 @@ module Idobata
 		end
 
 		def log_message
-			channel.bind('message_created') do |message_json|
+			channel.bind('message:created') do |message_json|
 				pp JSON.parse message_json
 			end
 		end
